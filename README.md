@@ -1,6 +1,6 @@
 
 ## Visão do problema
-Uma instituição financeira digital precisa decidir qual abordagem de comunicação utilizar para cada cliente ao apresentar uma oferta de CDB, o objetivo é o cliente clicar na mensagem mostrando interesse pelo produto.<br>
+Uma instituição financeira digital precisa decidir qual abordagem de comunicação utilizar para cada cliente ao apresentar uma oferta de CDB, o objetivo é o cliente clicar na mensagem mostrando interesse pelo produto.<br><br>
 Ao invés de utilizar regras fixas e testes A/B longos que demoram para reagir a mudanças, o projeto utiliza uma abordagem adaptativa de multi-armed bandit com o algoritmo Contextual Thompson Sampling para identificar comportamentos distintos, equilibrar exploração e explotação e aprender com respostas observadas sem congelar a decisão em regras estáticas.
 
 ## Instruções de execução
@@ -121,33 +121,33 @@ A interface permite informar o contexto do cliente (idade, cargo, escolaridade e
 **Dataset** - Bank Marketing<br>
 **Autor** - Henrique Yamahata<br>
 **Link da base Kaggle** - https://www.kaggle.com/datasets/henriqueyamahata/bank-marketing<br>
-Utilizado o arquivo **bank-additional-full.csv** em **\dat\kaggle\selected-dataset.csv**<br>
+Utilizado o arquivo *bank-additional-full.csv* em *\dat\kaggle\selected-dataset.csv*<br>
 **Contexto** - O conjunto de dados reúne informações de campanhas de marketing realizadas por telefone por uma instituição bancária portuguesa.
 
 ## Dicionário de dados
 
-- Colunas mantidas:
-**age** <br>
-**job** <br>
-**marital** <br>
-**education** <br>
-**previous** (quantidade de contatos realizados previamente) - Apresenta relação positiva relevante com a taxa de conversão.Quanto maior o número de contatos anteriores, maior tende a ser a conversão. <br>
-**poutcome** (resultado da campanha anterior) - Apresenta relação positiva relevante com a taxa de conversão. Clientes com histórico positivo de campanhas anteriores apresentaram taxa de conversão superior a 60%.<br>
-**y** - Variável alvo indicando aceitação ("yes") ou rejeição ("no") da oferta.  
+Colunas mantidas:<br>
+- **age** 
+- **job** 
+- **marital** 
+- **education** 
+- **previous** (quantidade de contatos realizados previamente) - Apresenta relação positiva relevante com a taxa de conversão.Quanto maior o número de contatos anteriores, maior tende a ser a conversão. 
+- **poutcome** (resultado da campanha anterior) - Apresenta relação positiva relevante com a taxa de conversão. Clientes com histórico positivo de campanhas anteriores apresentaram taxa de conversão superior a 60%.
+- **y** - Variável alvo indicando aceitação ("yes") ou rejeição ("no") da oferta.  
 
-- Colnunas acresentadas:<br>
-**customer_id** - Identificador sintético criado para relacionar clientes aos eventos simulados.
+Colnunas acresentadas:<br>
+- **customer_id** - Identificador sintético criado para relacionar clientes aos eventos simulados.
 
-- Colunas descartadas:<br>
-**default** (indica inadimplência) - Apenas 3 registros com valor "yes", sem representatividade estatística.<br>
-**housing** (possui financiamento imobiliário) - As taxas de conversão observadas entre as categorias apresentaram diferenças pouco significativas.<br>
-**loan** (empréstimo pessoal) - As taxas de conversão observadas entre as categorias apresentaram diferenças pouco significativas. <br>
-**contact** (meio de contato) - Informação específica da campanha original, não se aplica ao contexto dessa análise. <br>
-**month** (mês do contato) - Informação específica da campanha original, não se aplica ao contexto dessa análise. <br>
-**day_of_week** (dia da semana do contato) - Informação específica da campanha original, não se aplica ao contexto dessa análise. <br>
-**duration** (duração da ligação) - Informação conhecida somente após o contato, caracterizando vazamento temporal. <br>
-**campaign** (quantidade de contatos realizados na campanha) - Informação específica da campanha original, não se aplica ao contexto dessa análise.<br>
-**pdays** (dias desde o último contato) - Informação específica da campanha original, não se aplica ao contexto dessa análise.<br>
+Colunas descartadas:<br>
+- **default** (indica inadimplência) - Apenas 3 registros com valor "yes", sem representatividade estatística.
+- **housing** (possui financiamento imobiliário) - As taxas de conversão observadas entre as categorias apresentaram diferenças pouco significativas.
+- **loan** (empréstimo pessoal) - As taxas de conversão observadas entre as categorias apresentaram diferenças pouco significativas. 
+- **contact** (meio de contato) - Informação específica da campanha original, não se aplica ao contexto dessa análise. 
+- **month** (mês do contato) - Informação específica da campanha original, não se aplica ao contexto dessa análise. 
+- **day_of_week** (dia da semana do contato) - Informação específica da campanha original, não se aplica ao contexto dessa análise. 
+- **duration** (duração da ligação) - Informação conhecida somente após o contato, caracterizando vazamento temporal. 
+- **campaign** (quantidade de contatos realizados na campanha) - Informação específica da campanha original, não se aplica ao contexto dessa análise.
+- **pdays** (dias desde o último contato) - Informação específica da campanha original, não se aplica ao contexto dessa análise.
 
 ## Enriquecimento sintético
 
@@ -188,13 +188,6 @@ As seguintes métricas foram avaliadas:
 - **Conversion Rate** - percentual de ofertas que resultaram em conversão. Enquanto a Baseline converte aproximadamente 20 a cada 100 ofertas, o Contextual Thompson Sampling converte cerca de 25 a cada 100 ofertas.
 - **Exploration Rate** - percentual de braços utilizados por cada política. A Baseline explora apenas o braço considerado globalmente mais eficiente, enquanto o Contextual Thompson Sampling explora todos os braços durante o processo de aprendizagem.
 
-| Métrica | Baseline | Thompson |
-|---------|---------:|---------:|
-| Total de eventos | 123.288 | 123.288 |
-| Reward | 24.139 | 30.586 |
-| Conversion Rate (%) | 19,58 | 24,81 |
-| Exploration Rate (%) | 25,00 | 100,00 |
-
 > **Resultado**
 > O Contextual Thompson Sampling apresentou desempenho superior à política Baseline, obtendo aproximadamente **27% mais conversões** (30.586 contra 24.139), além de uma taxa de conversão cerca de 5 pontos percentuais maior.
 
@@ -228,9 +221,9 @@ Nos testes realizados, o algoritmo recomendou corretamente a oferta esperada em 
 ## Arquitetura-alvo em nuvem AWS
 
 A arquitetura proposta na AWS para implantação do projeto envolveria os seguintes serviços:<br>
-**Amazon EC2** - a API desenvolvida em FastAPI seria hospedada em uma instância EC2.<br>
-**Amazon S3** - Os arquivos utilizados pela aplicação, como o catálogo de ofertas, os eventos sintéticos e o Golden Set, seriam armazenados em um bucket S3, permitindo que a API carregue essas informações de forma centralizada e independente do código da aplicação.<br>
-**Amazon CloudWatch** - Para monitorar o funcionamento da solução, registrar logs, acompanhar métricas de utilização e identificar possíveis falhas na API.
+- **Amazon EC2** - a API desenvolvida em FastAPI seria hospedada em uma instância EC2.<br>
+- **Amazon S3** - Os arquivos utilizados pela aplicação, como o catálogo de ofertas, os eventos sintéticos e o Golden Set, seriam armazenados em um bucket S3, permitindo que a API carregue essas informações de forma centralizada e independente do código da aplicação.<br>
+- **Amazon CloudWatch** - Para monitorar o funcionamento da solução, registrar logs, acompanhar métricas de utilização e identificar possíveis falhas na API.
 
 Essa arquitetura é simples, inicialmente de baixo custo e permite evoluções futuras, como substituição dos arquivos CSV por um banco de dados ou implantação da aplicação em containers.
 
