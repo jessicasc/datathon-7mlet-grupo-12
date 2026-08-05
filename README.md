@@ -121,7 +121,7 @@ A interface permite informar o contexto do cliente (idade, cargo, escolaridade e
 **Dataset** - Bank Marketing<br>
 **Autor** - Henrique Yamahata<br>
 **Link da base Kaggle** - https://www.kaggle.com/datasets/henriqueyamahata/bank-marketing<br>
-Utilizado o arquivo *bank-additional-full.csv* em *\dat\kaggle\selected-dataset.csv*<br>
+Utilizado o arquivo `bank-additional-full.csv` em `\dat\kaggle\selected-dataset.csv`<br>
 **Contexto** - O conjunto de dados reúne informações de campanhas de marketing realizadas por telefone por uma instituição bancária portuguesa.
 
 ## Dicionário de dados
@@ -135,7 +135,7 @@ Colunas mantidas:<br>
 - **poutcome** (resultado da campanha anterior) - Apresenta relação positiva relevante com a taxa de conversão. Clientes com histórico positivo de campanhas anteriores apresentaram taxa de conversão superior a 60%.
 - **y** - Variável alvo indicando aceitação ("yes") ou rejeição ("no") da oferta.  
 
-Colnunas acresentadas:<br>
+Colunas acresentadas:<br>
 - **customer_id** - Identificador sintético criado para relacionar clientes aos eventos simulados.
 
 Colunas descartadas:<br>
