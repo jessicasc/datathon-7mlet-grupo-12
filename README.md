@@ -227,4 +227,4 @@ A arquitetura proposta na AWS para implantação do projeto envolveria os seguin
 
 Essa arquitetura é simples, inicialmente de baixo custo e permite evoluções futuras, como substituição dos arquivos CSV por um banco de dados ou implantação da aplicação em containers.
 
-
+`Jéssica Soares - RM 367045`
