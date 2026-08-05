@@ -7,8 +7,7 @@ Ao invés de utilizar regras fixas e testes A/B longos que demoram para reagir a
 
 ### 1. Clonar o repositório
 ```bash
-git clone <url-do-repositorio>
-cd datathon-7mlet-grupo-12
+git clone https://github.com/jessicasc/datathon-7mlet-grupo-12
 ```
 
 ### 2. Criar e ativar o ambiente virtual
