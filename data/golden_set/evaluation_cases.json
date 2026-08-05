@@ -1,0 +1,62 @@
+[
+  {
+    "case_id": 1,
+    "context": {
+      "age": 43,
+      "job": "management",
+      "education": "university.degree",
+      "poutcome": "success",
+      "previous": 2
+    },
+    "expected_arm": 1,
+    "justification": "Clientes com ensino superior e cargo de gestão apresentam maior propensão à comunicação formal."
+  },
+  {
+    "case_id": 2,
+    "context": {
+      "age": 22,
+      "job": "student",
+      "education": "high.school",
+      "poutcome": "nonexistent",
+      "previous": 0
+    },
+    "expected_arm": 3,
+    "justification": "Clientes jovens tendem a responder melhor a uma mensagem descontraída."
+  },
+  {
+    "case_id": 3,
+    "context": {
+      "age": 36,
+      "job": "services",
+      "education": "basic.9y",
+      "poutcome": "failure",
+      "previous": 1
+    },
+    "expected_arm": 2,
+    "justification": "Clientes com ensino básico tendem a responder melhor a mensagens com caráter educativo."
+  }, 
+  {
+    "case_id": 4,
+    "context": {
+      "age": 27,
+      "job": "technician",
+      "education": "university.degree",
+      "poutcome": "success",
+      "previous": 3
+    },
+    "expected_arm": 4,
+    "justification": "Clientes com histórico recente de sucesso em campanhas apresentam maior propensão à mensagem focada em benefícios."
+  },
+  {
+  "case_id": 5,
+  "context": {
+    "age": 25,
+    "job": "technician",
+    "education": "high.school",
+    "poutcome": "nonexistent",
+    "previous": 0
+  },
+  "expected_arm": 2,
+  "justification": "Cliente sem histórico de campanhas anteriores utilizado para validar o comportamento da política em um cenário com pouca informação."
+}
+]
